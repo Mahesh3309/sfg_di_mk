@@ -14,23 +14,23 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx= SpringApplication.run(SfgDiApplication.class, args);
 		MyController myController=(MyController)ctx.getBean(MyController.class);
+		System.out.println();
+		System.out.println("------------MK404 Primary Based Injection-------------");
 
-		String greeting=myController.sayHello();
-
-		System.out.println(greeting);
-
+		System.out.println(myController.sayHello());
+		System.out.println();
 		System.out.println("------------MK404 Property Based Injection-------------");
 
 		PropertyInjectedController propertyInjectedController=(PropertyInjectedController) ctx.getBean("propertyInjectedController");
 
 		System.out.println(propertyInjectedController.getGreetings());
-
+		System.out.println();
 		System.out.println("------------MK404 Setter Based Injection-------------");
 
 		SetterInjectedController setterInjectedController=(SetterInjectedController) ctx.getBean("setterInjectedController");
 
 		System.out.println(setterInjectedController.getGreetings());
-
+		System.out.println();
 		System.out.println("------------MK404 Constructor Based Injection-------------");
 
 		ConstructorInjectedController constructorInjectedController= (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
